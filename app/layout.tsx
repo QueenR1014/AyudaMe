@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className={`${zain.className} flex flex-col min-h-screen`}>
         {/* Header */}
         <header className="h-[10vh] bg-[#307D85] text-white flex flex-col items-center justify-center shadow-md">
-          <h1 className="text-2xl font-bold">AyudaMe</h1>
+          
           <NavBar/>
         </header>
 

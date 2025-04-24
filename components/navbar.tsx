@@ -6,6 +6,7 @@ const NavBar = () => {
     return(
         <nav className = "w-full h-24 shadow-xl">
             <div className = "flex justify-between items-center h-full w-full px-4 2xl:px-16">
+                {/*Imagen PharmaSync*/}
                 <div className="w-1/4 relative h-full">
                     <Link href = "/">
                     <Image
@@ -17,6 +18,11 @@ const NavBar = () => {
                     />
                     </Link>
                 </div>
+                {/*Imagen AyudaMe*/}
+                <div className='flex'>
+                <h1 className="text-4xl font-bold">AyudaMe</h1>
+                </div>
+                {/*NavMenu*/}
                 <div className='flex'>
                     <ul className='centered flex'>
                         <Link href = "/">
