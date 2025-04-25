@@ -1,5 +1,3 @@
-'use client';
-
 import {ReactNode} from 'react'
 export default function UserPageLayout({children}: { children: ReactNode }){
     return (
