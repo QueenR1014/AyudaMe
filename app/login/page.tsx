@@ -22,7 +22,7 @@ export default function Loginpage(){
             alert('Login incorrecto');
         }
     };
-
+    
     return (
         <>
         <h1>Acá se inicia sesión</h1>
@@ -44,7 +44,7 @@ export default function Loginpage(){
                 className='w-full p-2 border rounded'
                 required
             />
-            <button className = 'w-full bg-blue-600 text-white py-2 rounded'>Entrar</button>
+            <button type = "submit" className = 'w-full bg-blue-600 text-white py-2 rounded'>Entrar</button>
         </form>
         </>
     )

@@ -3,7 +3,7 @@ import { promises as fs } from 'fs';
 import path from 'path';
 
 export async function POST(req: NextRequest) {
-  const { username, password } = await req.json();
+  const { email, password } = await req.json();
 
   // Build path to users.json
   const filePath = path.join(process.cwd(), 'app', 'api', 'users', 'users.json');
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   const users = JSON.parse(fileContents);
 
   const user = users.find(
-    (u: any) => u.username === username && u.password === password
+    (u: any) => u.email === email && u.password === password
   );
 
   if (!user) {
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     path: '/',
-    maxAge: 60 * 60 * 24, // 1 day
+    maxAge: 2 * 60, // 2 min
   });
 
   return response;
