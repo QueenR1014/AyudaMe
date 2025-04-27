@@ -4,9 +4,9 @@ import path from 'path';
 
 export async function POST(req: NextRequest) {
   const { email, password } = await req.json();
-
+  console.log(email, password);
   // Build path to users.json
-  const filePath = path.join(process.cwd(), 'app', 'api', 'users', 'users.json');
+  const filePath = path.join(process.cwd(),'app','api', 'users', 'users.json');
   const fileContents = await fs.readFile(filePath, 'utf-8');
   const users = JSON.parse(fileContents);
 
