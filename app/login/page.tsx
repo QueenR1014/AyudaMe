@@ -25,7 +25,7 @@ export default function Loginpage(){
     
     return (
         <>
-        <h1>Acá se inicia sesión</h1>
+        
         <form onSubmit ={handleLogin} className='max-w-md mx-auto space-y-4'>
             <h2 className = 'text-2xl font-bold'>Accede a AyudaMe</h2>
             <input
