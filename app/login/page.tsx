@@ -23,9 +23,12 @@ export default function Loginpage(){
         }
     };
     
+    const handleRegister = () =>{
+        router.push('/register') //redirigir a página de registro
+    };
     return (
         <>
-        <h1>Acá se inicia sesión</h1>
+        
         <form onSubmit ={handleLogin} className='max-w-md mx-auto space-y-4'>
             <h2 className = 'text-2xl font-bold'>Accede a AyudaMe</h2>
             <input
@@ -44,8 +47,22 @@ export default function Loginpage(){
                 className='w-full p-2 border rounded'
                 required
             />
-            <button type = "submit" className = 'w-full bg-blue-600 text-white py-2 rounded'>Entrar</button>
+            <button type = "submit" className = 'w-full bg-[#F57430] text-white py-2 rounded'>Entrar</button>
         </form>
+
+
+        <p className='flex justify-center mt-4 text-gray-500'>
+            ¿No tienes cuenta? Crea una:
+        </p>
+        {/*Boton de Registro*/}
+        <div className='text-center'>
+            <button
+                onClick = {handleRegister}
+                className='w-full bg-[#F57430] text-white py-2 rounded'
+            >
+                Registrarse
+            </button>
+        </div>
         </>
     )
 }
