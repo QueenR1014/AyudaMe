@@ -6,8 +6,6 @@ export default async function UserPageLayout({ children }: { children: ReactNode
   const isLoggedIn = await isUserLoggedIn();
   if(!isLoggedIn){
     redirect('/login')
-  }else{
-    redirect('/user/myMedicines')
   }
   return (
     <>
