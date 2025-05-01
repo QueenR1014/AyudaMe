@@ -1,6 +1,13 @@
 import Link from 'next/link'
+import { isUserLoggedIn } from './api/login/check_logged'
+import {redirect} from 'next/navigation'
+export default async function Home() {
+  
+  const isLoggedIn = await isUserLoggedIn();
 
-export default function Home() {
+  if(isLoggedIn){
+    redirect('/user/myMedicines')
+  }
   return (
     <>
     <h1 className='flex justify-center'>Portal de Inicio</h1>
