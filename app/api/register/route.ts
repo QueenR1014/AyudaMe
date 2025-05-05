@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
 
   try {
     // Check if email already exists
-    const existingUser = await pool.query('SELECT * FROM "User" WHERE email = $1', [email]);
+    const existingUser = await pool.query('SELECT 1 FROM "User" WHERE email = $1', [email]);
     if (existingUser.rows.length > 0) {
       return NextResponse.json({ message: 'El correo ya está registrado' }, { status: 409 });
     }
@@ -27,13 +27,13 @@ export async function POST(req: NextRequest) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await pool.query(
-      'INSERT INTO "User" (username, email, password) VALUES ($1, $2, $3)',
-      [username, email, hashedPassword]
+      'INSERT INTO "User" (username, email, password, medicamentos) VALUES ($1, $2, $3, $4)',
+      [username, email, hashedPassword, []]
     );
 
     return NextResponse.json({ message: 'Usuario registrado con éxito' }, { status: 201 });
   } catch (error) {
-    console.error(error);
+    console.error('Error en el registro:' , error);
     return NextResponse.json({ message: 'Error interno del servidor' }, { status: 500 });
   }
 }
